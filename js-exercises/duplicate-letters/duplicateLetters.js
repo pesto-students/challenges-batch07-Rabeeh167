@@ -14,5 +14,4 @@ function duplicateLetters(str) {
   }
   return max > 1 ? max : false;
 }
-
 export { duplicateLetters };
