@@ -13,6 +13,13 @@ function sumFibs(num) {
   }
   return sumOdd + 1;
 }
-function cacheFunction() {}
 
+function cacheFunction(passedFunc) {
+  const cache = {};
+  return function fibCacheFunction(num) {
+    if (num in cache) return cache[num];
+    cache[num] = passedFunc(num);
+    return cache[num];
+  };
+}
 export { sumFibs, cacheFunction };
